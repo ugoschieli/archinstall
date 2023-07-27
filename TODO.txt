@@ -1,7 +1,0 @@
-- Set the timezone + hwclock
-- Set Locale
-- Set TTY keyboard layout
-- Set hostname
-- Network Configuration
-- Set Root password
-- Install a bootloader + microcode
