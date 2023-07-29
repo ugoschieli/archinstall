@@ -18,6 +18,8 @@ cat << EOF > /etc/hostname
 gemini
 EOF
 
+localectl set-x11-keymap fr
+
 systemctl enable NetworkManager.service
 
 passwd
