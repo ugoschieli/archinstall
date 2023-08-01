@@ -1,32 +1,51 @@
+# Base Packages
 base
 linux
 linux-firmware
 amd-ucode
-
-base-devel
-bash-completion
 man-db
 man-pages
-e2fsprogs
-dosfstools
-git
 
+# Dev Packages
+base-devel
+bash-completion
+git
+mesa-utils
+vulkan-tools
+
+# System Packages
 xorg-server
 xorg-xinit
 xclip
 xsel
+pipewire
+pipewire-audio
+pipewire-alsa
+pipewire-pulse
+wireplumber
+bluez
+bluez-utils
+polkit
+e2fsprogs
+dosfstools
 
+# Drivers
 xf86-video-amdgpu
 mesa
 vulkan-radeon
+vulkan-icd-loader
 libva-mesa-driver
 mesa-vdpau
 
+# Desktop Environment
 qtile
 networkmanager
 vim
 neovim
+lxsession
+alacritty
 
+# Fonts
 noto-fonts
 noto-fonts-emoji
 noto-fonts-cjk

@@ -21,10 +21,12 @@ EOF
 localectl set-x11-keymap fr
 
 systemctl enable NetworkManager.service
+systemctl enable pipewire-pulse.service
+systemctl enable bluetooth.service
 
 passwd
 
-useradd -m -G adm,ftp,games,http,rfkill,sys,systemd-journal,log,uucp,wheel ugo
+useradd -m -G wheel ugo
 sed '/%wheel ALL=(ALL:ALL) ALL/s/^# //' -i /etc/sudoers
 passwd ugo
 

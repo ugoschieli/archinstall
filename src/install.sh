@@ -8,11 +8,12 @@ if [[ "$DISK" =~ "nvme" ]]; then
     ESP="${DISK}p1";
     SWAP_PART="${DISK}p2";
     ROOT_PART="${DISK}p3";
-elif [[ "$DISK" =~ "sd" ]]; then
-    EFI_PART="${DISK}1";
+elif [[ "$DISK" =~ "vd" ]]; then
+    ESP="${DISK}1";
     SWAP_PART="${DISK}2";
     ROOT_PART="${DISK}3";
 fi
+
 
 parted --script $DISK mklabel gpt \
              mkpart '"ESP"' fat32 1MiB 501MiB \
@@ -29,7 +30,7 @@ mount --mkdir $ESP /mnt/boot
 swapon $SWAP_PART
 
 reflector --country fr,de --protocol https --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
-pacstrap -K /mnt - < pkglist.txt
+pacstrap -K /mnt `grep -v '^#' ./pkglist.txt`
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
