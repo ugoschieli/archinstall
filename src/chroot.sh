@@ -23,6 +23,7 @@ localectl set-x11-keymap fr
 systemctl enable NetworkManager.service
 systemctl enable pipewire-pulse.service
 systemctl enable bluetooth.service
+systemctl enable gdm.service
 
 passwd
 
@@ -42,6 +43,6 @@ title     Arch Linux
 linux     /vmlinuz-linux
 initrd    /amd-ucode.img
 initrd    /initramfs-linux.img
-options   root=PARTLABEL=ROOT_PART rw quiet
+options   root=PARTLABEL=root rw quiet
 EOF
 systemctl enable systemd-boot-update.service
