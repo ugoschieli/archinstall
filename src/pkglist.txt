@@ -62,6 +62,8 @@ lxsession
 alacritty
 firefox
 lutris
+discord
+spotify-launcher
 gnome
 gnome-tweaks
 
