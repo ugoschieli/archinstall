@@ -33,12 +33,11 @@ elif [[ $CONFIG == "virtualbox" ]]; then
     ROOT_SIZE=10;
 fi
 
-parted --script $DISK mklabel gpt \
-             mkpart '"efi"' fat32 1MiB 501MiB \
-             set 1 esp on \
-             mkpart '"swap"' linux-swap 501MiB 10.5GiB \
-             mkpart '"root"' ext4 10.5GiB 60.5GiB \
-	     mkpart '"home"' ext4 60.5GiB 100%
+echo "name=esp,type=uefi,bootable,size=+${ESP_SIZE}MiB" | sfdisk /dev/sda --quiet --wipe always
+echo "name=swap,type=swap,size=+${SWAP_SIZE}GiB" | sfdisk /dev/sda --append --quiet --wipe always
+echo "name=root,type=linux,size=+${ROOT_SIZE}GiB" | sfdisk /dev/sda --append --quiet --wipe always
+echo "name=home,type=linux" | sfdisk /dev/sda --append --quiet --wipe always
+sfdisk /dev/sda --list --verify
 
 mkfs.fat -F 32 -n "efi" $ESP
 mkswap -L "swap" $SWAP_PART
