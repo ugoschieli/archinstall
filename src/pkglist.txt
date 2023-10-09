@@ -14,6 +14,8 @@ bash-completion
 git
 mesa-utils
 vulkan-tools
+docker
+docker-compose
 
 # Utilities
 unzip
@@ -24,10 +26,10 @@ nano
 vim
 neovim
 tmux
+tree
 
 # System Packages
-xorg-server
-xorg-xinit
+xorg
 xclip
 xsel
 wl-clipboard
@@ -44,7 +46,6 @@ dosfstools
 flatpak
 xdg-desktop-portal
 xdg-desktop-portal-gtk
-lm_sensors
 
 # Drivers
 xf86-video-amdgpu
@@ -55,7 +56,6 @@ libva-mesa-driver
 mesa-vdpau
 
 # Desktop Environment
-qtile
 udisks2
 networkmanager
 lxsession
@@ -64,8 +64,6 @@ firefox
 lutris
 discord
 spotify-launcher
-gnome
-gnome-tweaks
 
 # Fonts
 gnu-free-fonts
