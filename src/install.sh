@@ -54,8 +54,9 @@ pacstrap -K /mnt `grep -v '^#' ./pkglist.txt`
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
-cp chroot.sh /mnt
-arch-chroot /mnt ./chroot.sh
+cp chroot.sh /mnt/tmp
+cp -r configs /mnt/tmp
+arch-chroot /mnt ./tmp/chroot.sh
 
 umount $ESP
 umount $HOME_PART
