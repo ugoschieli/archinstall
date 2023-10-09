@@ -14,6 +14,11 @@ elif [[ "$DISK" =~ "vd" ]]; then
     SWAP_PART="${DISK}2";
     ROOT_PART="${DISK}3";
     HOME_PART="${DISK}4";
+elif [[ "$DISK" =~ "sd" ]]; then
+    ESP="${DISK}1";
+    SWAP_PART="${DISK}2";
+    ROOT_PART="${DISK}3";
+    HOME_PART="${DISK}4";
 fi
 
 
