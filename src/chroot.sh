@@ -23,11 +23,11 @@ cp /configs/30-touchpad.conf /etc/X11/xorg.conf.d/
 
 systemctl enable NetworkManager.service
 systemctl enable bluetooth.service
-systemctl enable gdm.service
+systemctl enable docker.service
 
 passwd
 
-useradd -m -G wheel ugo
+useradd -m -G wheel docker ugo
 sed '/%wheel ALL=(ALL:ALL) ALL/s/^# //' -i /etc/sudoers
 passwd ugo
 
