@@ -57,7 +57,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 mkdir /mnt/archinstall
 cp chroot.sh /mnt/archinstall
 cp -r configs /mnt/archinstall
-arch-chroot /mnt /mnt/archinstall/chroot.sh
+arch-chroot /mnt /archinstall/chroot.sh
 
 umount $ESP
 umount $HOME_PART
