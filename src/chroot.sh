@@ -18,8 +18,8 @@ cat << EOF > /etc/hostname
 gemini
 EOF
 
-cp /configs/00-keyboard.conf /etc/X11/xorg.conf.d/
-cp /configs/30-touchpad.conf /etc/X11/xorg.conf.d/
+cp /tmp/configs/00-keyboard.conf /etc/X11/xorg.conf.d/
+cp /tmp/configs/30-touchpad.conf /etc/X11/xorg.conf.d/
 
 systemctl enable NetworkManager.service
 systemctl enable bluetooth.service
