@@ -58,9 +58,9 @@ genfstab -U /mnt >> /mnt/etc/fstab
 cp chroot.sh /mnt
 arch-chroot /mnt ./chroot.sh
 
-umount $ROOT_PART
 umount $ESP
 umount $HOME_PART
+umount $ROOT_PART
 swapoff $SWAP_PAR
 
 echo 'Installation finished'
