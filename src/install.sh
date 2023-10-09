@@ -54,6 +54,7 @@ pacstrap -K /mnt `grep -v '^#' ./pkglist.txt`
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
+mkdir /mnt/archinstall
 cp chroot.sh /mnt/archinstall
 cp -r configs /mnt/archinstall
 arch-chroot /mnt /mnt/archinstall/chroot.sh
