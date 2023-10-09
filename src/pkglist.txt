@@ -56,6 +56,8 @@ libva-mesa-driver
 mesa-vdpau
 
 # Desktop Environment
+i3
+dmenu
 udisks2
 networkmanager
 lxsession
@@ -64,6 +66,7 @@ firefox
 lutris
 discord
 spotify-launcher
+feh
 
 # Fonts
 gnu-free-fonts
