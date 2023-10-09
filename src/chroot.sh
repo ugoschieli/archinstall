@@ -27,7 +27,7 @@ systemctl enable docker.service
 
 passwd
 
-useradd -m -G wheel docker ugo
+useradd -m -G wheel,docker ugo
 sed '/%wheel ALL=(ALL:ALL) ALL/s/^# //' -i /etc/sudoers
 passwd ugo
 
