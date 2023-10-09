@@ -2,25 +2,36 @@
 
 set -xeuo pipefail
 
-DISK=/dev/nvme0n1
+CONFIG=virtualbox
 
-if [[ "$DISK" =~ "nvme" ]]; then
+if [[ $CONFIG == "gemini" ]]; then
+    DISK=/dev/nvme0n1;
     ESP="${DISK}p1";
     SWAP_PART="${DISK}p2";
     ROOT_PART="${DISK}p3";
     HOME_PART="${DISK}p4";
-elif [[ "$DISK" =~ "vd" ]]; then
+    ESP_SIZE=500;
+    SWAP_SIZE=10;
+    ROOT_SIZE=50;
+elif [[ $CONFIG == "qemu" ]]; then
+    DISK=/dev/vda;
     ESP="${DISK}1";
     SWAP_PART="${DISK}2";
     ROOT_PART="${DISK}3";
     HOME_PART="${DISK}4";
-elif [[ "$DISK" =~ "sd" ]]; then
+    ESP_SIZE=500;
+    SWAP_SIZE=1;
+    ROOT_SIZE=10;
+elif [[ $CONFIG == "virtualbox" ]]; then
+    DISK=/dev/sda;
     ESP="${DISK}1";
     SWAP_PART="${DISK}2";
     ROOT_PART="${DISK}3";
     HOME_PART="${DISK}4";
+    ESP_SIZE=500;
+    SWAP_SIZE=1;
+    ROOT_SIZE=10;
 fi
-
 
 parted --script $DISK mklabel gpt \
              mkpart '"efi"' fat32 1MiB 501MiB \
