@@ -27,6 +27,8 @@ vim
 neovim
 tmux
 tree
+feh
+htop
 
 # System Packages
 xorg
@@ -66,7 +68,6 @@ firefox
 lutris
 discord
 spotify-launcher
-feh
 
 # Fonts
 gnu-free-fonts
