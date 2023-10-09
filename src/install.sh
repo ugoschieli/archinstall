@@ -62,6 +62,6 @@ arch-chroot /mnt /archinstall/chroot.sh
 umount $ESP
 umount $HOME_PART
 umount $ROOT_PART
-swapoff $SWAP_PAR
+swapoff $SWAP_PART
 
 echo 'Installation finished'
