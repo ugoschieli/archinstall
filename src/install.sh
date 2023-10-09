@@ -35,6 +35,7 @@ mount --mkdir $HOME_PART /mnt/home
 swapon $SWAP_PART
 
 reflector --country fr,de --protocol https --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
+sed '/ParallelDownloads/s/^#//' -i /etc/pacman.conf
 pacstrap -K /mnt `grep -v '^#' ./pkglist.txt`
 
 genfstab -U /mnt >> /mnt/etc/fstab
