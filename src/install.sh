@@ -23,7 +23,7 @@ mount --mkdir $EFI_PART /mnt/boot
 swapon $SWAP_PART
 
 sed '/ParallelDownloads/s/^#//' -i /etc/pacman.conf
-pacstrap -K /mnt base linux linux-firmware amd-ucode iwd vim openssh docker docker-compose sudo polkit htop bash-completion
+pacstrap -K /mnt base linux linux-firmware amd-ucode iwd vim openssh docker docker-compose sudo polkit htop bash-completion git
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
