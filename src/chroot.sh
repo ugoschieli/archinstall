@@ -20,7 +20,7 @@ EOF
 
 cat << EOF > /etc/systemd/network/25-wireless.network
 [Match]
-Name=wlp1s0
+Name=wlan0
 
 [Network]
 DHCP=yes
